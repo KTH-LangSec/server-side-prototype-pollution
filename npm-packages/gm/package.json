@@ -1,0 +1,11 @@
+{
+  "name": "gm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Mikhail Shcherbakov",
+  "license": "ISC",
+  "dependencies": {
+    "gm": "1.25.0"
+  }
+}
