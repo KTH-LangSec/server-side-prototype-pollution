@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "author": "Mikhail Shcherbakov",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "gm": "1.25.0"
   }
