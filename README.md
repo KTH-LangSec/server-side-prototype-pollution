@@ -4,16 +4,16 @@ This repository contains a collection of Server-Side Prototype Pollution gadgets
 ## Node.js
 | Function    | OS          | Polluted Properties | Fixed?    | Notes               |
 |-------------|-------------|---------------------|-----------|---------------------|
-| execSync    | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
-| execSync    | Linux       | shell; env          | Yes       |  |
-| execSync    | Windows     | shell; input        | Yes       |  |
-| spawnSync   | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
-| spawnSync   | Linux       | shell; env          | Yes       |  |
-| spawnSync   | Windows     | shell; input        | Yes       |  |
-| spawn       | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
-| require     | Cros-Platf. | main; NODE_OPTIONS  | Yes       | Requires the absence of `main` property in `package.json` of the loaded package |
-| require     | Cros-Platf. | main; NODE_OPTIONS  | No        | Requires the absence of `package.json` in the directory from the argument |
-| import      | Cros-Platf. | source              | No        | |
+| [execSync](/nodejs/child_process/execSync.env.PoC.js)         | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
+| [execSync](/nodejs/child_process/execSync.env.lnx.PoC.js)     | Linux       | shell; env          | Yes       |  |
+| [execSync](/nodejs/child_process/execSync.input.win.PoC.js)   | Windows     | shell; input        | Yes       |  |
+| [spawnSync](/nodejs/child_process/spawnSync.env.PoC.js)       | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
+| [spawnSync](/nodejs/child_process/spawnSync.env.lnx.PoC.js)   | Linux       | shell; env          | Yes       |  |
+| [spawnSync](/nodejs/child_process/spawnSync.input.win.PoC.js) | Windows     | shell; input        | Yes       |  |
+| [spawn](/nodejs/child_process/spawn.env.PoC.js)               | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
+| [require](/nodejs/require/require.main.PoC.js)                | Cros-Platf. | main; NODE_OPTIONS  | Yes       | Requires the absence of `main` property in `package.json` of the loaded package |
+| [require](/nodejs/require/require.main2.PoC.js)               | Cros-Platf. | main; NODE_OPTIONS  | No        | Requires the absence of `package.json` in the directory from the argument |
+| [import](/nodejs/import/import.source.PoC.js)                 | Cros-Platf. | source              | No        | |
 
 ## NPM Packages
 TBU
