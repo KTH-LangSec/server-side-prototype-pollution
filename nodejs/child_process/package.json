@@ -1,0 +1,11 @@
+{
+  "name": "child-process-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shell.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-inspect": "^2.0.0"
+  }
+}
