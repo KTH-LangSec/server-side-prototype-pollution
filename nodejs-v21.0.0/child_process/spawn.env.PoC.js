@@ -1,9 +1,9 @@
 ﻿const { spawn } = require('child_process');
 
 Object.prototype.shell = "node";
-Object.prototype.NODE_OPTIONS = '--inspect-brk=0.0.0.0:1337';
+Object.prototype.env = { NODE_OPTIONS: '--inspect-brk=0.0.0.0:1337' };
 
-const spawnedProcess = spawn('hostname', {env: {AAA: "BBB"}});
+const spawnedProcess = spawn('hostname', { });
 
 spawnedProcess.stdout.on('data', (data) => {
   console.log(`Output: ${data}`);
