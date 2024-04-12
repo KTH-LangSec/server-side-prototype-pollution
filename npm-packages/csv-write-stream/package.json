@@ -1,0 +1,11 @@
+{
+  "name": "csv-write-stream-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "csv-write-stream": "^2.0.0"
+  }
+}

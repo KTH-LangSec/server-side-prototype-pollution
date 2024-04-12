@@ -1,0 +1,11 @@
+{
+  "name": "requireg-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "requireg": "^0.2.2"
+  }
+}

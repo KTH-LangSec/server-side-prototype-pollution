@@ -1,0 +1,11 @@
+{
+  "name": "liftoff-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "liftoff": "^4.0.0"
+  }
+}

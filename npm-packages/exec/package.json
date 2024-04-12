@@ -1,0 +1,11 @@
+{
+  "name": "exec-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "exec": "^0.2.1"
+  }
+}

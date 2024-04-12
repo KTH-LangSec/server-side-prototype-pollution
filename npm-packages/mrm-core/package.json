@@ -1,0 +1,11 @@
+{
+  "name": "mrm-core-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mrm-core": "^7.1.14"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "chrome-launcher-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chrome-launcher": "^0.15.2"
+  }
+}

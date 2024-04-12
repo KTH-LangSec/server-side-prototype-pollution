@@ -1,0 +1,11 @@
+{
+  "name": "forever-monitor-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "forever-monitor": "^3.0.3"
+  }
+}

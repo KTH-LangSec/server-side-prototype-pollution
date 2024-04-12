@@ -1,0 +1,11 @@
+{
+  "name": "winreg-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "winreg": "^1.2.4"
+  }
+}

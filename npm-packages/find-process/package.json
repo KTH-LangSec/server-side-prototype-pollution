@@ -1,0 +1,11 @@
+{
+  "name": "find-process-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "find-process": "^1.4.7"
+  }
+}

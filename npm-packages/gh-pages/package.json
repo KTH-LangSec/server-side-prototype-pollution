@@ -1,0 +1,11 @@
+{
+  "name": "gh-pages-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}

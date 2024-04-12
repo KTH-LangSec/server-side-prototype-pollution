@@ -1,0 +1,11 @@
+{
+  "name": "git-clone-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "git-clone": "^0.2.0"
+  }
+}

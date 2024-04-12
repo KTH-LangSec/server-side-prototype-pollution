@@ -1,0 +1,11 @@
+{
+  "name": "coffee-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "coffee": "^5.5.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "teen_process-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "teen_process": "^2.0.4"
+  }
+}

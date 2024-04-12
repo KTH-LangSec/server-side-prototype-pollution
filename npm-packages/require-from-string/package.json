@@ -1,0 +1,12 @@
+{
+  "name": "require-from-string-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "require-from-string": "^2.0.2"
+  }
+}

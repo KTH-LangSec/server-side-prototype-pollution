@@ -1,0 +1,14 @@
+{
+  "name": "koa-views-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.14.2",
+    "koa-views": "^8.0.0",
+    "supertest": "^6.3.3",
+    "underscore": "^1.13.6"
+  }
+}

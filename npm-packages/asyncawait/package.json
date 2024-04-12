@@ -1,0 +1,11 @@
+{
+  "name": "asyncawait-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "asyncawait": "^3.0.0"
+  }
+}

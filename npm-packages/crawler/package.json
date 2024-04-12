@@ -1,0 +1,11 @@
+{
+  "name": "crawler-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "crawler": "^1.4.0"
+  }
+}

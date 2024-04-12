@@ -1,0 +1,11 @@
+{
+  "name": "sonarqube-scanner-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sonarqube-scanner": "^3.0.1"
+  }
+}

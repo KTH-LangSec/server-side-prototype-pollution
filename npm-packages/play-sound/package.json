@@ -1,0 +1,11 @@
+{
+  "name": "play-sound-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "play-sound": "^1.1.5"
+  }
+}

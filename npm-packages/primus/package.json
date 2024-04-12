@@ -1,0 +1,11 @@
+{
+  "name": "primus-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "primus": "^8.0.7"
+  }
+}

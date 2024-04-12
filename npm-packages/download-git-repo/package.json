@@ -1,0 +1,11 @@
+{
+  "name": "download-git-repo-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "download-git-repo": "^3.0.2"
+  }
+}

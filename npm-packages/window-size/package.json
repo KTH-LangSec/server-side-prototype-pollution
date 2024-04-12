@@ -1,0 +1,11 @@
+{
+  "name": "window-size-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "window-size": "^1.1.1"
+  }
+}

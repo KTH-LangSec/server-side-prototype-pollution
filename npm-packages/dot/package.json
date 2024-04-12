@@ -1,0 +1,11 @@
+{
+  "name": "dot-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dot": "1.1.3"
+  }
+}

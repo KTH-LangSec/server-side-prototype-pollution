@@ -1,0 +1,11 @@
+{
+  "name": "the-script-jsdoc-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "the-script-jsdoc": "^2.0.4"
+  }
+}

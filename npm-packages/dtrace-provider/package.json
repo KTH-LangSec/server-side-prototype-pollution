@@ -1,0 +1,11 @@
+{
+  "name": "dtrace-provider-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dtrace-provider": "0.8.5"
+  }
+}

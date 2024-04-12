@@ -1,0 +1,11 @@
+{
+  "name": "workerpool-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "workerpool": "^6.4.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fluent-ffmpeg-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}

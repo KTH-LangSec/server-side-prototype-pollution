@@ -1,0 +1,11 @@
+{
+  "name": "external-editor-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "external-editor": "^3.1.0"
+  }
+}

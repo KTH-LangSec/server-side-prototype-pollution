@@ -1,0 +1,11 @@
+{
+  "name": "python-shell-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "python-shell": "^5.0.0"
+  }
+}

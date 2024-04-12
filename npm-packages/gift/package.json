@@ -1,0 +1,11 @@
+{
+  "name": "gift-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gift": "^0.10.2"
+  }
+}

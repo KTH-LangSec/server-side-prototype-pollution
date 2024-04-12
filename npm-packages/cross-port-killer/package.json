@@ -1,0 +1,11 @@
+{
+  "name": "cross-port-killer-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cross-port-killer": "^1.4.0"
+  }
+}

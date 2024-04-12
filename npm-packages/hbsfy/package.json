@@ -1,0 +1,12 @@
+{
+  "name": "hbsfy-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "hbsfy": "^2.8.1"
+  }
+}

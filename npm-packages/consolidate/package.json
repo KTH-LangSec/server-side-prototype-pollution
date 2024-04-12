@@ -1,0 +1,13 @@
+{
+  "name": "consolidate-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "consolidate": "0.16.0",
+    "jazz": "^0.0.18",
+    "underscore": "^1.13.6"
+  }
+}

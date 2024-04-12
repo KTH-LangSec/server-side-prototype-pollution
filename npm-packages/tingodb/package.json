@@ -1,0 +1,11 @@
+{
+  "name": "tingodb-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "tingodb": "^0.6.1"
+  }
+}

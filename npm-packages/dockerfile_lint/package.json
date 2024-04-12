@@ -1,0 +1,11 @@
+{
+  "name": "dockerfile_lint-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dockerfile_lint": "^0.3.4"
+  }
+}
