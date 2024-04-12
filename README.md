@@ -79,4 +79,60 @@ This repository contains a collection of Server-Side Prototype Pollution gadgets
 `*`: This was not the case prior to Deno v1.41.1, see `CVE-2024-27931`.
 
 ## NPM Packages
-TBU
+| Package    | Function                                                        | Version | Type     |
+|------------|-----------------------------------------------------------------|---------|----------|
+| asyncawait | [<require>](/npm-packages/asyncawait/asyncawait.PoC.js) | 3.0.0   | ACI |
+| better-queue | [push](/npm-packages/better-queue/better-queue.PoC.js) | 3.8.12 | LFI* |
+| binary-parser | [parse](/npm-packages/binary-parser/binary-parser.PoC.js) | 2.2.1 | ACE |
+| chrome-launcher | [launch](/npm-packages/chrome-launcher/chrome-launcher.PoC.js) | 0.15.2 | ACI |
+| coffee | [fork](/npm-packages/coffee/coffee.fork.PoC.js) | 5.5.0 | ACI |
+| coffee | [spawn](/npm-packages/coffee/coffee.spawn.PoC.js) | 5.5.0 | ACI |
+| consolidate | [jazz](/npm-packages/consolidate/jazz.PoC.js) | 0.16.0 |          |
+| consolidate | [underscore](/npm-packages/consolidate/underscore.PoC.js) | 0.16.0 |          |
+| crawler | [queue](/npm-packages/crawler/crawler.PoC.js) | 1.4.0 |          |
+| cross-port-killer | [kill](/npm-packages/cross-port-killer/cross-port-killer.PoC.js) | 1.4.0 | ACI |
+| cross-spawn | [spawn](/npm-packages/cross-spawn/cross-spawn.spawn.PoC.js) | 7.0.3 | ACI |
+| cross-spawn | [spawn.sync](/npm-packages/cross-spawn/cross-spawn.spawn.sync.PoC.js) | 7.0.3 | ACI |
+| csv-write-stream | [end](/npm-packages/csv-write-stream/csv-write-stream.PoC.js) | 2.0.0 | ACE |
+| dockerfile_lint | [DockerFileValidator](/npm-packages/dockerfile_lint/dockerfile_lint.PoC.js) | 0.3.4 | ACE |
+| dot | [process](/npm-packages/dot/dot.PoC.js) | 1.1.3 |          |
+| download-git-repo | [download-git-repo](/npm-packages/download-git-repo/download-git-repo.PoC.js) | 3.0.2 | ACI |
+| dtrace-provider | [<require>](/npm-packages/dtrace-provider/dtrace-provider.PoC.js) | 0.8.5 | LFI* |
+| esformatter | [format](/npm-packages/esformatter/esformatter.PoC.js) | 0.11.3 | LFI |
+| exec | [exec](/npm-packages/exec/exec.PoC.js) | 0.2.1 | ACI |
+| external-editor | [edit](/npm-packages/external-editor/external-editor.edit.PoC.js) | 3.1.0 | ACI |
+| external-editor | [editAsync](/npm-packages/external-editor/external-editor.edit.PoC.js) | 3.1.0 | ACI |
+| fibers | [<require>](/npm-packages/fibers/fibers.PoC.js) | 5.0.3 | ACI |
+| find-process | [find-process](/npm-packages/find-process/find-process.PoC.js) | 1.4.7 | ACI* |
+| fluent-ffmpeg | [preset](/npm-packages/fluent-ffmpeg/fluent-ffmpeg.PoC.js) | 2.1.2 | LFI* |
+| forever-monitor | [start](/npm-packages/forever-monitor/forever-monitor.PoC.js) | 3.0.3 | ACI |
+| gh-pages | [publish](/npm-packages/gh-pages/gh-pages.PoC.js) | 5.0.0 | ACI |
+| gift | [clone](/npm-packages/gift/gift.clone.PoC.js) | 0.10.2 | ACI |
+| git-clone | [git-clone](/npm-packages/git-clone/git-clone.PoC.js) | 0.2.0 |          |
+| gm | [gm](/npm-packages/gm/gm.PoC.js) | 1.25.0 | ACI |
+| growl | [growl](/npm-packages/growl/growl.PoC.js) | 1.10.5 | ACI |
+| hbsfy | [configure](/npm-packages/hbsfy/hbsfy.configure.PoC.js) | 2.8.1 | LFI |
+| hbsfy | [compile](/npm-packages/hbsfy/hbsfy.configure.PoC.js) | 2.8.1 | LFI |
+| jsdoc-api | [explain](/npm-packages/jsdoc-api/jsdoc-api.explain.PoC.js) | 8.0.0 | ACI |
+| jsdoc-api | [explainSync](/npm-packages/jsdoc-api/jsdoc-api.explainSync.PoC.js) | 8.0.0 | ACI |
+| jsdoc-api | [renderSync](/npm-packages/jsdoc-api/jsdoc-api.renderSync.PoC.js) | 8.0.0 | ACI |
+| jsdoc-to-markdown | [render](/npm-packages/jsdoc-to-markdown/jsdoc-to-markdown.render.PoC.js) | 8.0.0 | ACI |
+| jsdoc-to-markdown | [renderSync](/npm-packages/jsdoc-to-markdown/jsdoc-to-markdown.renderSync.PoC.js) | 8.0.0 | ACI |
+| koa-views | [koa-views](/npm-packages/koa-views/koa-views.PoC.js) | 8.0.0 |          |
+| liftoff | [prepare](/npm-packages/liftoff/liftoff.PoC.js) | 4.0.0 | ACI |
+| mrm-core | [install](/npm-packages/mrm-core/mrm-core.PoC.js) | 7.1.14 | ACI |
+| ping | [sys.probe](/npm-packages/ping/ping.PoC.js) | 0.4.4 | ACI |
+| play-sound | [play-sound](/npm-packages/play-sound/play-sound.ctor.PoC.js) | 1.1.5 | ACI |
+| play-sound | [play](/npm-packages/play-sound/play-sound.play.PoC.js) | 1.1.5 | ACI |
+| primus | [parser](/npm-packages/primus/primus.parser.PoC.js) | 8.0.7 | LFI |
+| primus | [transformer](/npm-packages/primus/primus.transformer.PoC.js) | 8.0.7 | LFI |
+| python-shell | [runString](/npm-packages/python-shell/python-shell.PoC.js) | 5.0.0 | ACI |
+| require-from-string | [require-from-string](/npm-packages/require-from-string/require-from-string.PoC.js) | 2.0.2 | LFI* |
+| requireg | [resolve](/npm-packages/requireg/requireg.PoC.js) | 0.2.2 | ACI |
+| sonarqube-scanner | [sonarqube-scanner](/npm-packages/sonarqube-scanner/sonarqube-scanner.PoC.js) | 3.0.1 | ACI |
+| teen_process | [start](/npm-packages/teen_process/teen_process.PoC.js) | 2.0.4 | ACI |
+| the-script-jsdoc | [the-script-jsdoc](/npm-packages/the-script-jsdoc/the-script-jsdoc.PoC.js) | 2.0.4 | ACI |
+| tingodb | [findOne](/npm-packages/tingodb/tingodb.PoC.js) | 0.6.1 | ACE |
+| window-size | [tput](/npm-packages/window-size/window-size.PoC.js) | 1.1.1 | ACI |
+| winreg | [values](/npm-packages/winreg/winreg.PoC.js) | 1.2.4 | ACI |
+| workerpool | [exec](/npm-packages/workerpool/workerpool.PoC.js) | 6.4.0 | ACI |
