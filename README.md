@@ -1,23 +1,27 @@
 # Server-Side Prototype Pollution
-This repository contains a collection of Server-Side Prototype Pollution gadgets in Node.js core code and 3rd party NPM packages.
+
+This repository contains a collection of Server-Side Prototype Pollution gadgets
+in Node.js core code and 3rd party NPM packages.
 
 ## Node.js
-| Function    | OS          | Polluted Properties | Fixed?    | Notes               |
-|-------------|-------------|---------------------|-----------|---------------------|
-| [execSync](/nodejs/child_process/execSync.env.PoC.js)         | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
-| [execSync](/nodejs/child_process/execSync.env.lnx.PoC.js)     | Linux       | shell; env          | Yes       |  |
-| [execSync](/nodejs/child_process/execSync.input.win.PoC.js)   | Windows     | shell; input        | Yes       |  |
-| [spawnSync](/nodejs/child_process/spawnSync.env.PoC.js)       | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
-| [spawnSync](/nodejs/child_process/spawnSync.env.lnx.PoC.js)   | Linux       | shell; env          | Yes       |  |
-| [spawnSync](/nodejs/child_process/spawnSync.input.win.PoC.js) | Windows     | shell; input        | Yes       |  |
-| [spawn](/nodejs/child_process/spawn.env.PoC.js)               | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js |
+
+| Function                                                      | OS          | Polluted Properties | Fixed?    | Notes                                                                           |
+| ------------------------------------------------------------- | ----------- | ------------------- | --------- | ------------------------------------------------------------------------------- |
+| [execSync](/nodejs/child_process/execSync.env.PoC.js)         | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js                                                             |
+| [execSync](/nodejs/child_process/execSync.env.lnx.PoC.js)     | Linux       | shell; env          | Yes       |                                                                                 |
+| [execSync](/nodejs/child_process/execSync.input.win.PoC.js)   | Windows     | shell; input        | Yes       |                                                                                 |
+| [spawnSync](/nodejs/child_process/spawnSync.env.PoC.js)       | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js                                                             |
+| [spawnSync](/nodejs/child_process/spawnSync.env.lnx.PoC.js)   | Linux       | shell; env          | Yes       |                                                                                 |
+| [spawnSync](/nodejs/child_process/spawnSync.input.win.PoC.js) | Windows     | shell; input        | Yes       |                                                                                 |
+| [spawn](/nodejs/child_process/spawn.env.PoC.js)               | Cros-Platf. | shell; NODE_OPTIONS | Partially | Connect by shell.js                                                             |
 | [require](/nodejs/require/require.main.PoC.js)                | Cros-Platf. | main; NODE_OPTIONS  | Yes       | Requires the absence of `main` property in `package.json` of the loaded package |
-| [require](/nodejs/require/require.main2.PoC.js)               | Cros-Platf. | main; NODE_OPTIONS  | No        | Requires the absence of `package.json` in the directory from the argument |
-| [import](/nodejs/import/import.source.PoC.js)                 | Cros-Platf. | source              | No        | |
+| [require](/nodejs/require/require.main2.PoC.js)               | Cros-Platf. | main; NODE_OPTIONS  | No        | Requires the absence of `package.json` in the directory from the argument       |
+| [import](/nodejs/import/import.source.PoC.js)                 | Cros-Platf. | source              | No        |                                                                                 |
 
 ## Deno
+
 | Function                                                                             | Polluted Properties                  | Type                        | Notes                                 |
-|--------------------------------------------------------------------------------------|--------------------------------------|-----------------------------|---------------------------------------|
+| ------------------------------------------------------------------------------------ | ------------------------------------ | --------------------------- | ------------------------------------- |
 | [fetch](/deno/fetch/fetch.PoC.ts)                                                    | `body`; `headers`; `method`; `0`     | Server Side Request Forgery | Limited by network permissions        |
 | [Deno.makeTempDir](/deno/Deno/makeTempDir/makeTempDir.dir.PoC.ts)                    | `dir`                                | Path Traversal              | Limited by file system permissions    |
 | [Deno.makeTempDir](/deno/Deno/makeTempDir/makeTempDir.prefix.PoC.ts)                 | `prefix`                             | Path Traversal              | Limited by file system permissions`*` |
@@ -79,60 +83,87 @@ This repository contains a collection of Server-Side Prototype Pollution gadgets
 `*`: This was not the case prior to Deno v1.41.1, see `CVE-2024-27931`.
 
 ## NPM Packages
-| Package    | Function                                                        | Version | Type     |
-|------------|-----------------------------------------------------------------|---------|----------|
-| asyncawait | [<require>](/npm-packages/asyncawait/asyncawait.PoC.js) | 3.0.0   | ACI |
-| better-queue | [push](/npm-packages/better-queue/better-queue.PoC.js) | 3.8.12 | LFI* |
-| binary-parser | [parse](/npm-packages/binary-parser/binary-parser.PoC.js) | 2.2.1 | ACE |
-| chrome-launcher | [launch](/npm-packages/chrome-launcher/chrome-launcher.PoC.js) | 0.15.2 | ACI |
-| coffee | [fork](/npm-packages/coffee/coffee.fork.PoC.js) | 5.5.0 | ACI |
-| coffee | [spawn](/npm-packages/coffee/coffee.spawn.PoC.js) | 5.5.0 | ACI |
-| consolidate | [jazz](/npm-packages/consolidate/jazz.PoC.js) | 0.16.0 |          |
-| consolidate | [underscore](/npm-packages/consolidate/underscore.PoC.js) | 0.16.0 |          |
-| crawler | [queue](/npm-packages/crawler/crawler.PoC.js) | 1.4.0 |          |
-| cross-port-killer | [kill](/npm-packages/cross-port-killer/cross-port-killer.PoC.js) | 1.4.0 | ACI |
-| cross-spawn | [spawn](/npm-packages/cross-spawn/cross-spawn.spawn.PoC.js) | 7.0.3 | ACI |
-| cross-spawn | [spawn.sync](/npm-packages/cross-spawn/cross-spawn.spawn.sync.PoC.js) | 7.0.3 | ACI |
-| csv-write-stream | [end](/npm-packages/csv-write-stream/csv-write-stream.PoC.js) | 2.0.0 | ACE |
-| dockerfile_lint | [DockerFileValidator](/npm-packages/dockerfile_lint/dockerfile_lint.PoC.js) | 0.3.4 | ACE |
-| dot | [process](/npm-packages/dot/dot.PoC.js) | 1.1.3 |          |
-| download-git-repo | [download-git-repo](/npm-packages/download-git-repo/download-git-repo.PoC.js) | 3.0.2 | ACI |
-| dtrace-provider | [<require>](/npm-packages/dtrace-provider/dtrace-provider.PoC.js) | 0.8.5 | LFI* |
-| esformatter | [format](/npm-packages/esformatter/esformatter.PoC.js) | 0.11.3 | LFI |
-| exec | [exec](/npm-packages/exec/exec.PoC.js) | 0.2.1 | ACI |
-| external-editor | [edit](/npm-packages/external-editor/external-editor.edit.PoC.js) | 3.1.0 | ACI |
-| external-editor | [editAsync](/npm-packages/external-editor/external-editor.edit.PoC.js) | 3.1.0 | ACI |
-| fibers | [<require>](/npm-packages/fibers/fibers.PoC.js) | 5.0.3 | ACI |
-| find-process | [find-process](/npm-packages/find-process/find-process.PoC.js) | 1.4.7 | ACI* |
-| fluent-ffmpeg | [preset](/npm-packages/fluent-ffmpeg/fluent-ffmpeg.PoC.js) | 2.1.2 | LFI* |
-| forever-monitor | [start](/npm-packages/forever-monitor/forever-monitor.PoC.js) | 3.0.3 | ACI |
-| gh-pages | [publish](/npm-packages/gh-pages/gh-pages.PoC.js) | 5.0.0 | ACI |
-| gift | [clone](/npm-packages/gift/gift.clone.PoC.js) | 0.10.2 | ACI |
-| git-clone | [git-clone](/npm-packages/git-clone/git-clone.PoC.js) | 0.2.0 |          |
-| gm | [gm](/npm-packages/gm/gm.PoC.js) | 1.25.0 | ACI |
-| growl | [growl](/npm-packages/growl/growl.PoC.js) | 1.10.5 | ACI |
-| hbsfy | [configure](/npm-packages/hbsfy/hbsfy.configure.PoC.js) | 2.8.1 | LFI |
-| hbsfy | [compile](/npm-packages/hbsfy/hbsfy.configure.PoC.js) | 2.8.1 | LFI |
-| jsdoc-api | [explain](/npm-packages/jsdoc-api/jsdoc-api.explain.PoC.js) | 8.0.0 | ACI |
-| jsdoc-api | [explainSync](/npm-packages/jsdoc-api/jsdoc-api.explainSync.PoC.js) | 8.0.0 | ACI |
-| jsdoc-api | [renderSync](/npm-packages/jsdoc-api/jsdoc-api.renderSync.PoC.js) | 8.0.0 | ACI |
-| jsdoc-to-markdown | [render](/npm-packages/jsdoc-to-markdown/jsdoc-to-markdown.render.PoC.js) | 8.0.0 | ACI |
-| jsdoc-to-markdown | [renderSync](/npm-packages/jsdoc-to-markdown/jsdoc-to-markdown.renderSync.PoC.js) | 8.0.0 | ACI |
-| koa-views | [koa-views](/npm-packages/koa-views/koa-views.PoC.js) | 8.0.0 |          |
-| liftoff | [prepare](/npm-packages/liftoff/liftoff.PoC.js) | 4.0.0 | ACI |
-| mrm-core | [install](/npm-packages/mrm-core/mrm-core.PoC.js) | 7.1.14 | ACI |
-| ping | [sys.probe](/npm-packages/ping/ping.PoC.js) | 0.4.4 | ACI |
-| play-sound | [play-sound](/npm-packages/play-sound/play-sound.ctor.PoC.js) | 1.1.5 | ACI |
-| play-sound | [play](/npm-packages/play-sound/play-sound.play.PoC.js) | 1.1.5 | ACI |
-| primus | [parser](/npm-packages/primus/primus.parser.PoC.js) | 8.0.7 | LFI |
-| primus | [transformer](/npm-packages/primus/primus.transformer.PoC.js) | 8.0.7 | LFI |
-| python-shell | [runString](/npm-packages/python-shell/python-shell.PoC.js) | 5.0.0 | ACI |
-| require-from-string | [require-from-string](/npm-packages/require-from-string/require-from-string.PoC.js) | 2.0.2 | LFI* |
-| requireg | [resolve](/npm-packages/requireg/requireg.PoC.js) | 0.2.2 | ACI |
-| sonarqube-scanner | [sonarqube-scanner](/npm-packages/sonarqube-scanner/sonarqube-scanner.PoC.js) | 3.0.1 | ACI |
-| teen_process | [start](/npm-packages/teen_process/teen_process.PoC.js) | 2.0.4 | ACI |
-| the-script-jsdoc | [the-script-jsdoc](/npm-packages/the-script-jsdoc/the-script-jsdoc.PoC.js) | 2.0.4 | ACI |
-| tingodb | [findOne](/npm-packages/tingodb/tingodb.PoC.js) | 0.6.1 | ACE |
-| window-size | [tput](/npm-packages/window-size/window-size.PoC.js) | 1.1.1 | ACI |
-| winreg | [values](/npm-packages/winreg/winreg.PoC.js) | 1.2.4 | ACI |
-| workerpool | [exec](/npm-packages/workerpool/workerpool.PoC.js) | 6.4.0 | ACI |
+
+| Package             | Version | Function                                                                            | Polluted Properties          | Type | Found by                                                      |
+| ------------------- | ------- | ----------------------------------------------------------------------------------- | ---------------------------- | ---- | ------------------------------------------------------------- |
+| asyncawait          | 3.0.0   | [require](/npm-packages/asyncawait/asyncawait.PoC.js)                               | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| better-queue        | 3.8.12  | [push](/npm-packages/better-queue/better-queue.PoC.js)                              | `store`                      | LFI* | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| binary-parser       | 2.2.1   | [parse](/npm-packages/binary-parser/binary-parser.PoC.js)                           | `alias`                      | ACE  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| bson                | 4.7.2   | [deserialize](/npm-packages/bson/bson.PoC.js)                                       | `evalFunctions`              | ACE  | [Silent Spring](https://github.com/KTH-LangSec/silent-spring) |
+| chrome-launcher     | 0.15.2  | [launch](/npm-packages/chrome-launcher/chrome-launcher.PoC.js)                      | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| coffee              | 5.5.0   | [fork](/npm-packages/coffee/coffee.fork.PoC.js)                                     | `env`                        | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| coffee              | 5.5.0   | [spawn](/npm-packages/coffee/coffee.spawn.PoC.js)                                   | `shell`; `env`               | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| crawler             | 1.4.0   | [queue](/npm-packages/crawler/crawler.PoC.js)                                       | `repo`                       | LFI* | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| cross-port-killer   | 1.4.0   | [kill](/npm-packages/cross-port-killer/cross-port-killer.PoC.js)                    | `shell`; `env`               | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| cross-spawn         | 7.0.3   | [spawn](/npm-packages/cross-spawn/cross-spawn.spawn.PoC.js)                         | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| cross-spawn         | 7.0.3   | [spawn.sync](/npm-packages/cross-spawn/cross-spawn.spawn.sync.PoC.js)               | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| csv-write-stream    | 2.0.0   | [end](/npm-packages/csv-write-stream/csv-write-stream.PoC.js)                       | `separator`                  | ACE  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| dockerfile_lint     | 0.3.4   | [DockerFileValidator](/npm-packages/dockerfile_lint/dockerfile_lint.PoC.js)         | `arrays.regex`               | ACE  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| download-git-repo   | 3.0.2   | [download-git-repo](/npm-packages/download-git-repo/download-git-repo.PoC.js)       | `clone`; `GIT_SSH_COMMAND`   | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| dtrace-provider     | 0.8.5   | [require](/npm-packages/dtrace-provider/dtrace-provider.PoC.js)                     | <any>                        | LFI* | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| ejs                 | 3.1.9   | [render](/npm-packages/ejs/ejs.PoC.js)                                              | `client`; `escapeFunction`   | ACE  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| esformatter         | 0.11.3  | [format](/npm-packages/esformatter/esformatter.PoC.js)                              | `plugins`                    | LFI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| exec                | 0.2.1   | [exec](/npm-packages/exec/exec.PoC.js)                                              | `shell`                      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| external-editor     | 3.1.0   | [edit](/npm-packages/external-editor/external-editor.edit.PoC.js)                   | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| external-editor     | 3.1.0   | [editAsync](/npm-packages/external-editor/external-editor.edit.PoC.js)              | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| fibers              | 5.0.3   | [require](/npm-packages/fibers/fibers.PoC.js)                                       | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| find-process        | 1.4.7   | [find-process](/npm-packages/find-process/find-process.PoC.js)                      | `shell`; `NODE_OPTIONS`      | ACI* | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| fluent-ffmpeg       | 2.1.2   | [preset](/npm-packages/fluent-ffmpeg/fluent-ffmpeg.PoC.js)                          | `presets`                    | LFI* | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| forever-monitor     | 3.0.3   | [start](/npm-packages/forever-monitor/forever-monitor.PoC.js)                       | `command`                    | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| gh-pages            | 5.0.0   | [publish](/npm-packages/gh-pages/gh-pages.PoC.js)                                   | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| gift                | 0.10.2  | [clone](/npm-packages/gift/gift.clone.PoC.js)                                       | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| git-clone           | 0.2.0   | [git-clone](/npm-packages/git-clone/git-clone.PoC.js)                               | `GIT_SSH_COMMAND`            | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| gm                  | 1.25.0  | [gm](/npm-packages/gm/gm.PoC.js)                                                    | `appPath`                    | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| growl               | 1.10.5  | [growl](/npm-packages/growl/growl.PoC.js)                                           | `exec`                       | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| hbsfy               | 2.8.1   | [configure](/npm-packages/hbsfy/hbsfy.configure.PoC.js)                             | `p`                          | LFI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| hbsfy               | 2.8.1   | [compile](/npm-packages/hbsfy/hbsfy.configure.PoC.js)                               | `p`                          | LFI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| jsdoc-api           | 8.0.0   | [explain](/npm-packages/jsdoc-api/jsdoc-api.explain.PoC.js)                         | `NODE_OPTIONS`               | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| jsdoc-api           | 8.0.0   | [explainSync](/npm-packages/jsdoc-api/jsdoc-api.explainSync.PoC.js)                 | `env.NODE_OPTIONS`           | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| jsdoc-api           | 8.0.0   | [renderSync](/npm-packages/jsdoc-api/jsdoc-api.renderSync.PoC.js)                   | `NODE_OPTIONS`               | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| jsdoc-to-markdown   | 8.0.0   | [render](/npm-packages/jsdoc-to-markdown/jsdoc-to-markdown.render.PoC.js)           | `NODE_OPTIONS`; `source`     | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| jsdoc-to-markdown   | 8.0.0   | [renderSync](/npm-packages/jsdoc-to-markdown/jsdoc-to-markdown.renderSync.PoC.js)   | `NODE_OPTIONS`; `source`     | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| liftoff             | 4.0.0   | [prepare](/npm-packages/liftoff/liftoff.PoC.js)                                     | `env.NODE_OPTIONS`           | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| lodash.template     | 4.5.0   | [lodash.template](/npm-packages/lodash.template/lodash.template.PoC.js)             | `sourceURL`                  | ACE  | [Alex Brasetvik](https://hackerone.com/alexbrasetvik)         |
+| mrm-core            | 7.1.14  | [install](/npm-packages/mrm-core/mrm-core.PoC.js)                                   | `shell`; `env.NODE_OPTIONS`  | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| nodemailer          | 6.9.1   | [sendMail](npm-packages/nodemailer/nodemailer.PoC.js)                               | `sendmail`; `path`; `args`   | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| ping                | 0.4.4   | [sys.probe](/npm-packages/ping/ping.PoC.js)                                         | `shell`                      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| play-sound          | 1.1.5   | [play-sound](/npm-packages/play-sound/play-sound.ctor.PoC.js)                       | `players`                    | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| play-sound          | 1.1.5   | [play](/npm-packages/play-sound/play-sound.play.PoC.js)                             | `player`; `env.NODE_OPTIONS` | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| primus              | 8.0.7   | [parser](/npm-packages/primus/primus.parser.PoC.js)                                 | `parser`; <value>            | LFI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| primus              | 8.0.7   | [transformer](/npm-packages/primus/primus.transformer.PoC.js)                       | `transformer`; <value>       | LFI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| python-shell        | 5.0.0   | [runString](/npm-packages/python-shell/python-shell.PoC.js)                         | `pythonPath`; `NODE_OPTIONS` | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| require-from-string | 2.0.2   | [require-from-string](/npm-packages/require-from-string/require-from-string.PoC.js) | `prependPaths`               | LFI* | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| requireg            | 0.2.2   | [resolve](/npm-packages/requireg/requireg.PoC.js)                                   | `shell`; `env.NODE_OPTIONS`  | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| sonarqube-scanner   | 3.0.1   | [sonarqube-scanner](/npm-packages/sonarqube-scanner/sonarqube-scanner.PoC.js)       | `version`                    | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| teen_process        | 2.0.4   | [start](/npm-packages/teen_process/teen_process.PoC.js)                             | `shell`; `env.NODE_OPTIONS`  | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| the-script-jsdoc    | 2.0.4   | [the-script-jsdoc](/npm-packages/the-script-jsdoc/the-script-jsdoc.PoC.js)          | `shell`; `env.NODE_OPTIONS`  | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| tingodb             | 0.6.1   | [findOne](/npm-packages/tingodb/tingodb.PoC.js)                                     | `_sub`                       | ACE  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| window-size         | 1.1.1   | [tput](/npm-packages/window-size/window-size.PoC.js)                                | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| winreg              | 1.2.4   | [values](/npm-packages/winreg/winreg.PoC.js)                                        | `shell`; `NODE_OPTIONS`      | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+| workerpool          | 6.4.0   | [exec](/npm-packages/workerpool/workerpool.PoC.js)                                  | `env.NODE_OPTIONS`           | ACI  | [Dasty](https://github.com/KTH-LangSec/Dasty)                 |
+
+`*`: denotes the gadgets that require the attacker’s control of a local file for
+arbitrary code execution.
+
+<!-- | consolidate         | 0.16.0  | [jazz](/npm-packages/consolidate/jazz.PoC.js)                                       |                    |     | | -->
+<!-- | consolidate         | 0.16.0  | [underscore](/npm-packages/consolidate/underscore.PoC.js)                           |                    |     | | -->
+<!-- | dot                 | 1.1.3   | [process](/npm-packages/dot/dot.PoC.js)                                             |                    |     | | -->
+<!-- | koa-views           | 8.0.0   | [koa-views](/npm-packages/koa-views/koa-views.PoC.js)                               |                    |     | | -->
+
+## Exploits
+
+| Vulnerability Report                                                                                      | Application  | Version | Attack | Gadget                                                                  |
+| --------------------------------------------------------------------------------------------------------- | ------------ | ------- | ------ | ----------------------------------------------------------------------- |
+| [CVE-2019-7609](https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/)             | Kibana       | 6.6.0   | RCE    | child_process.spawn                                                     |
+| [HackerOne #852613](https://hackerone.com/reports/852613)                                                 | Kibana       | 7.6.2   | RCE    | [lodash.template](/npm-packages/lodash.template/lodash.template.PoC.js) |
+| [HackerOne #861744](https://hackerone.com/reports/861744)                                                 | Kibana       | 7.7.0   | RCE    | [lodash.template](/npm-packages/lodash.template/lodash.template.PoC.js) |
+| Reported by [Silent Spring](https://github.com/KTH-LangSec/silent-spring)                                 | npm cli      | 8.1.0   | RCE    | child_process.spawn                                                     |
+| [CVE-2022-24760](https://huntr.com/bounties/ac24b343-e7da-4bc7-ab38-4f4f5cc9d099/)                        | Parse Server | 4.10.6  | RCE    | [bson](/npm-packages/bson/bson.PoC.js)                                  |
+| [CVE-2022-39396](https://github.com/parse-community/parse-server/security/advisories/GHSA-prm5-8g2m-24gg) | Parse Server | 5.3.1   | RCE    | [bson](/npm-packages/bson/bson.PoC.js)                                  |
+| [CVE-2022-41878](https://github.com/parse-community/parse-server/security/advisories/GHSA-xprv-wvh7-qqqx) | Parse Server | 5.3.1   | RCE    | [bson](/npm-packages/bson/bson.PoC.js)                                  |
+| [CVE-2022-41879](https://github.com/parse-community/parse-server/security/advisories/GHSA-93vw-8fm5-p2jf) | Parse Server | 5.3.1   | RCE    | [bson](/npm-packages/bson/bson.PoC.js)                                  |
+| Reported by [Silent Spring](https://github.com/KTH-LangSec/silent-spring)                                 | Parse Server | 5.3.1   | RCE    | require 1                                                               |
+| [CVE-2023-23917](https://hackerone.com/reports/1631258)                                                   | Rocket.Chat  | 5.1.5   | RCE    | [bson](/npm-packages/bson/bson.PoC.js)                                  |
+| CVE-2023-31414                                                                                            | Kibana       | 8.7.0   | RCE    | require 2                                                               |
+| CVE-2023-31415                                                                                            | Kibana       | 8.7.0   | RCE    | [nodemailer](npm-packages/nodemailer/nodemailer.PoC.js)                 |
+| [CVE-2023-36475](https://github.com/parse-community/parse-server/security/advisories/GHSA-462x-c3jw-7vr6) | Parse Server | 6.2.1   | RCE    | [bson](/npm-packages/bson/bson.PoC.js)                                  |
