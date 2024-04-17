@@ -1,0 +1,11 @@
+{
+  "name": "nodemailer-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.9.1"
+  }
+}

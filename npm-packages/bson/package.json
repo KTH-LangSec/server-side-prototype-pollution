@@ -1,0 +1,11 @@
+{
+  "name": "bson-gadgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bson": "4.7.2"
+  }
+}
