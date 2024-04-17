@@ -1,4 +1,6 @@
-﻿// based on https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/
+﻿// FIXED
+
+// based on https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/
 // run `nc -lnvp 4242`
 const { spawn, spawnSync, exec, execSync, execFile, execFileSync } = require('child_process');
 

