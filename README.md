@@ -1,6 +1,6 @@
 # Server-Side Prototype Pollution
 
-Welcome! This repository contains a collection of Server-Side Prototype
+Hej! :wave: This repository contains a collection of Server-Side Prototype
 Pollution gadgets found in [Node.js](#nodejs), [Deno](#deno) standard libraries,
 and various 3rd-party [NPM packages](#npm-packages). We also compile information
 about known [exploits](#exploits) against popular applications to showcase the
@@ -33,8 +33,9 @@ We also recommend checking out other awesome blog posts and papers:
   ["JavaScript prototype pollution attack in NodeJS"](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)
   by Olivier Arteau provides many details on the exploitation and mitigation of
   Prototype Pollutions on the server-side.
-- The blog post "Server-side prototype pollution: Black-box detection without
-  the DoS" by Gareth Heyes focuses on server-side gadgets and how to detect
+- The blog post
+  ["Server-side prototype pollution: Black-box detection without the DoS"](https://portswigger.net/research/server-side-prototype-pollution)
+  by Gareth Heyes focuses on server-side gadgets and how to detect
   Prototype Pollution using black-box techniques.
 - The paper
   ["Undefined-oriented Programming: Detecting and Chaining Prototype Pollution Gadgets in Node.js Template Engines for Malicious Consequences"](https://yinzhicao.org/UoP/UoP-Oakland.pdf)
@@ -45,13 +46,14 @@ We also recommend checking out other awesome blog posts and papers:
   provides an exciting story of exploiting Prototype Pollution in Blitz.js, a
   fullstack toolkit for Next.js.
 
-**Contributers:** Mikhail @yuske Shcherbakov,
+**Contributers:** [Mikhail Shcherbakov](https://github.com/yuske),
 [Eric Cornelissen](https://github.com/ericcornelissen),
 [Paul Moosbrugger](https://github.com/pmoosi),
 [Musard Balliu](https://github.com/musard) and
 [Cristian-Alexandru Staicu](https://github.com/cristianstaicu).
 
-> [!TIP] If you want to add new gadgets, please create a Pull Request. Feel free
+> [!NOTE]
+> If you want to add new gadgets, please create a Pull Request. Feel free
 > to ask any questions, discuss new ideas for Prototype Pollution research, or
 > suggest improvements for this repo. Just DM me at https://twitter.com/yu5k3.
 
