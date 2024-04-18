@@ -1,7 +1,59 @@
 # Server-Side Prototype Pollution
 
-This repository contains a collection of Server-Side Prototype Pollution gadgets
-in Node.js core code and 3rd party NPM packages.
+Welcome! This repository contains a collection of Server-Side Prototype
+Pollution gadgets found in [Node.js](#nodejs), [Deno](#deno) standard libraries,
+and various 3rd-party [NPM packages](#npm-packages). We also compile information
+about known [exploits](#exploits) against popular applications to showcase the
+impact of these gadgets.
+
+## What is Prototype Pollution?
+
+_Prototype pollution_ is a vulnerability specific to JavaScript and TypeScript
+that allows an attacker to modify an object's prototype with attacker-controlled
+properties. The severity of these vulnerabilities hinges on _gadgets_, fragments
+of existing code in attacked applications that begin by reading undefined
+properties and can lead to malicious actions. For instance, these gadgets might
+enable Remote Code Execution (RCE) attacks.
+
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&v=gCVTbfDecwI" target="_blank">
+  <img src="http://img.youtube.com/vi/gCVTbfDecwI/mqdefault.jpg" alt="Watch the video" border="10"  align="right"/>
+</a></p>
+
+If you're new to Prototype Pollution, check out our
+[DEF CON 31](https://www.youtube.com/watch?v=gCVTbfDecwI) talk for a quick
+20-minute introduction to Prototype Pollution vulnerabilities in Node.js, their
+gadgets, and an example of a real RCE exploit. All accompanying materials, such
+as the paper, code, benchmarks, experimental results, and links to extended
+talks, are available in the repo
+[Silent Spring](https://github.com/KTH-LangSec/silent-spring).
+
+We also recommend checking out other awesome blog posts and papers:
+
+- The classic paper
+  ["JavaScript prototype pollution attack in NodeJS"](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)
+  by Olivier Arteau provides many details on the exploitation and mitigation of
+  Prototype Pollutions on the server-side.
+- The blog post "Server-side prototype pollution: Black-box detection without
+  the DoS" by Gareth Heyes focuses on server-side gadgets and how to detect
+  Prototype Pollution using black-box techniques.
+- The paper
+  ["Undefined-oriented Programming: Detecting and Chaining Prototype Pollution Gadgets in Node.js Template Engines for Malicious Consequences"](https://yinzhicao.org/UoP/UoP-Oakland.pdf)
+  by Zhengyu Liu et al., presents a methodology for building Prototype Pollution
+  gadget chains and tooling for it.
+- The write-up
+  ["Remote Code Execution via Prototype Pollution in Blitz.js"](https://www.sonarsource.com/blog/blitzjs-prototype-pollution/)
+  provides an exciting story of exploiting Prototype Pollution in Blitz.js, a
+  fullstack toolkit for Next.js.
+
+**Contributers:** Mikhail @yuske Shcherbakov,
+[Eric Cornelissen](https://github.com/ericcornelissen),
+[Paul Moosbrugger](https://github.com/pmoosi),
+[Musard Balliu](https://github.com/musard) and
+[Cristian-Alexandru Staicu](https://github.com/cristianstaicu).
+
+> [!TIP] If you want to add new gadgets, please create a Pull Request. Feel free
+> to ask any questions, discuss new ideas for Prototype Pollution research, or
+> suggest improvements for this repo. Just DM me at https://twitter.com/yu5k3.
 
 ## Node.js
 
@@ -24,7 +76,7 @@ in Node.js core code and 3rd party NPM packages.
 | [fetch](/nodejs/http/fetch.socketPath.PoC.js)                                     | `socketPath`                                                                    | No               | SSRF                               |                                                                                 | Unpublished paper                                                                                                                                                   |
 | [http.get](/nodejs/http/get.options.PoC.js)                                       | `hostname`, `headers`, `method`, `path`, `port`                                 | No               | SSRF                               |                                                                                 | Unpublished paper                                                                                                                                                   |
 | [http.request](/nodejs/http/request.options.PoC.js)                               | `hostname`, `headers`, `method`, `path`, `port`                                 | No               | SSRF                               |                                                                                 | Unpublished paper                                                                                                                                                   |
-| [http.Server.listen](nodejs-v21.0.0\http\listen.host.PoC.js)                      | `backlog`                                                                       | No               | Segfault                           |                                                                                 | Unpublished paper                                                                                                                                                   |
+| [http.Server.listen](/nodejs/http/listen.host.PoC.js)                             | `backlog`                                                                       | No               | Segfault                           |                                                                                 | Unpublished paper                                                                                                                                                   |
 | [https.get](/nodejs/https/get.options.PoC.js)                                     | `hostname`, `headers`, `method`, `path`, `port`, `NODE_TLS_REJECT_UNAUTHORIZED` | No               | SSRF                               |                                                                                 | Unpublished paper                                                                                                                                                   |
 | [https.request](/nodejs/https/request.options.PoC.js)                             | `hostname`, `headers`, `method`, `path`, `port`, `NODE_TLS_REJECT_UNAUTHORIZED` | No               | SSRF                               |                                                                                 | Unpublished paper                                                                                                                                                   |
 | [import](/nodejs/import/import.source.PoC.js)                                     | `source`                                                                        | No               | ACE                                |                                                                                 | Unpublished paper                                                                                                                                                   |
