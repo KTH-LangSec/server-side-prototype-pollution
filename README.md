@@ -8,7 +8,7 @@ popular applications to showcase the impact of these gadgets.
 - [What is Prototype Pollution?](#what-is-prototype-pollution)
 - [Node.js Gadgets](#nodejs)
 - [Deno Gadgets](#deno)
-- [NPM Packages Gadgets](#deno)
+- [NPM Packages Gadgets](#npm-packages)
 - [Exploits](#exploits)
 
 ## What is Prototype Pollution?
@@ -32,7 +32,7 @@ as CodeQL queries, benchmarks, experimental results, and links to extended
 talks, are available in the repo
 [Silent Spring](https://github.com/KTH-LangSec/silent-spring).
 
-We also recommend exploring these insightful papers and blog posts:
+We also recommend exploring these papers and blog posts:
 
 - The classic paper
   ["JavaScript prototype pollution attack in NodeJS"](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)
@@ -42,8 +42,7 @@ We also recommend exploring these insightful papers and blog posts:
   ["Silent Spring: Prototype Pollution Leads to Remote Code Execution in Node.js"](https://www.usenix.org/system/files/usenixsecurity23-shcherbakov.pdf)
   by Shcherbakov et al. introduces a tool for Prototype Pollution detection with
   97% recall and the first gadgets in the Node.js stdlib, including a gadget in
-  `require`. This repository was developed as a result of this research
-  :nerd_face:
+  `require`. This repository was developed as a result of this research. 🤓
 - The blog post
   ["Server-side prototype pollution: Black-box detection without the DoS"](https://portswigger.net/research/server-side-prototype-pollution)
   by Gareth Heyes focuses on server-side gadgets and how to detect Prototype
