@@ -2,7 +2,7 @@
 
 Hej! :wave: This repository contains a collection of Server-Side Prototype
 Pollution gadgets found in Node.js, Deno standard libraries, and various
-3rd-party NPM packages. We also compile information about known exploits against
+third-party NPM packages. We also compile information about known exploits against
 popular applications to showcase the impact of these gadgets.
 
 - [What is Prototype Pollution?](#what-is-prototype-pollution)
@@ -16,33 +16,33 @@ popular applications to showcase the impact of these gadgets.
 _Prototype pollution_ is a vulnerability specific to JavaScript and TypeScript
 that allows an attacker to modify an object's prototype with attacker-controlled
 properties. The severity of these vulnerabilities hinges on _gadgets_, fragments
-of existing code in attacked applications that begin by reading undefined
-properties and can lead to malicious actions. For instance, these gadgets might
-enable Remote Code Execution (RCE) attacks.
+of existing code in vulnerable applications that read undefined
+properties and execute security-sentitive actions. For instance, these gadgets can
+lead to Remote Code Execution (RCE) attacks.
 
 <p><a href="http://www.youtube.com/watch?feature=player_embedded&v=gCVTbfDecwI" target="_blank">
   <img src="http://img.youtube.com/vi/gCVTbfDecwI/mqdefault.jpg" alt="Watch the video" border="10"  align="right"/>
 </a></p>
 
-If you're new to Prototype Pollution, check out our
+If you're new to server-side Prototype Pollution, check out our
 [DEF CON 31](https://www.youtube.com/watch?v=gCVTbfDecwI) talk for a quick
-20-minute introduction to Prototype Pollution vulnerabilities in Node.js, their
+20-minute introduction to Prototype Pollution vulnerabilities in Node.js, 
 gadgets, and an example of a real RCE exploit. All accompanying materials, such
 as CodeQL queries, benchmarks, experimental results, and links to extended
 talks, are available in the repo
 [Silent Spring](https://github.com/KTH-LangSec/silent-spring).
 
-We also recommend exploring these papers and blog posts:
+We also recommend checking out these papers and blog posts:
 
-- The classic paper
+- The seminal paper
   ["JavaScript prototype pollution attack in NodeJS"](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)
   by Olivier Arteau provides many details on the exploitation and mitigation of
-  Prototype Pollutions on the server-side.
+  Prototype Pollution on the server-side.
 - The paper
   ["Silent Spring: Prototype Pollution Leads to Remote Code Execution in Node.js"](https://www.usenix.org/system/files/usenixsecurity23-shcherbakov.pdf)
-  by Shcherbakov et al. introduces a tool for Prototype Pollution detection with
-  97% recall and the first gadgets in the Node.js stdlib, including a gadget in
-  `require`. This repository was developed as a result of this research. 🤓
+  by Shcherbakov et al. introduces a tool for Prototype Pollution detection and
+  and the first gadgets in Node.js stdlib, including a gadget in
+  `require`. This repository was developed as a result of this research project. 🤓
 - The blog post
   ["Server-side prototype pollution: Black-box detection without the DoS"](https://portswigger.net/research/server-side-prototype-pollution)
   by Gareth Heyes focuses on server-side gadgets and how to detect Prototype
