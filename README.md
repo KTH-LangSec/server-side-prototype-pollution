@@ -55,12 +55,15 @@ We also recommend checking out these papers and blog posts:
   ["Remote Code Execution via Prototype Pollution in Blitz.js"](https://www.sonarsource.com/blog/blitzjs-prototype-pollution/)
   provides an exciting story of exploiting Prototype Pollution in Blitz.js, a
   fullstack toolkit for Next.js.
+- Is Prototype Pollution possible on the client-side? Check out 
+  [this repo](https://github.com/BlackFan/client-side-prototype-pollution)
+ 
 
 > [!NOTE] 
 > If you want to add new gadgets, please create a Pull Request. Feel
 > free to ask any questions, discuss new ideas for Prototype Pollution research,
 > or suggest improvements for this repo. 
-> Contact: [Mikhail Shcherbakov](https://twitter.com/yu5k3) and [Eric Cornelissen](https://github.com/ericcornelissen)
+> Contact: [Mikhail Shcherbakov](https://twitter.com/yu5k3), [Eric Cornelissen](https://github.com/ericcornelissen), and [Musard Balliu](https://people.kth.se/~musard/),
 
 ## Node.js
 
