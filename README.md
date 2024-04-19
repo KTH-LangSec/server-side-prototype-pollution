@@ -59,8 +59,8 @@ We also recommend checking out these papers and blog posts:
 > [!NOTE] 
 > If you want to add new gadgets, please create a Pull Request. Feel
 > free to ask any questions, discuss new ideas for Prototype Pollution research,
-> or suggest improvements for this repo. Just DM me at
-> https://twitter.com/yu5k3.
+> or suggest improvements for this repo. 
+> Contact: [Mikhail Shcherbakov](https://twitter.com/yu5k3) and [Eric Cornelissen](https://github.com/ericcornelissen)
 
 ## Node.js
 
