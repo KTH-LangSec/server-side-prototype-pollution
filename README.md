@@ -26,7 +26,7 @@ lead to Remote Code Execution (RCE) attacks.
 
 If you're new to server-side Prototype Pollution, check out our
 [DEF CON 31](https://www.youtube.com/watch?v=gCVTbfDecwI) talk for a quick
-20-minute introduction to Prototype Pollution vulnerabilities in Node.js, 
+20-minute introduction to Prototype Pollution vulnerabilities in Node.js,
 gadgets, and an example of a real RCE exploit. All accompanying materials, such
 as CodeQL queries, benchmarks, experimental results, and links to extended
 talks, are available in the repo
@@ -55,14 +55,14 @@ We also recommend checking out these papers and blog posts:
   ["Remote Code Execution via Prototype Pollution in Blitz.js"](https://www.sonarsource.com/blog/blitzjs-prototype-pollution/)
   provides an exciting story of exploiting Prototype Pollution in Blitz.js, a
   fullstack toolkit for Next.js.
-- Is Prototype Pollution possible on the client-side? Check out 
+- Is Prototype Pollution possible on the client-side? Check out
   [this repo](https://github.com/BlackFan/client-side-prototype-pollution)
- 
 
-> [!NOTE] 
+
+> [!NOTE]
 > If you want to add new gadgets, please create a Pull Request. Feel
 > free to ask any questions, discuss new ideas for Prototype Pollution research,
-> or suggest improvements for this repo. 
+> or suggest improvements for this repo.
 > Contact: [Mikhail Shcherbakov](https://twitter.com/yu5k3), [Eric Cornelissen](https://github.com/ericcornelissen), and [Musard Balliu](https://people.kth.se/~musard/)
 
 ## Node.js
@@ -100,6 +100,14 @@ We also recommend checking out these papers and blog posts:
 | Function                                                                             | Polluted Properties                  | Type                        | Notes                                 | Found by |
 | ------------------------------------------------------------------------------------ | ------------------------------------ | --------------------------- | ------------------------------------- | -------- |
 | [fetch](/deno/fetch/fetch.PoC.ts)                                                    | `body`; `headers`; `method`; `0`     | Server Side Request Forgery | Limited by network permissions        | TBA      |
+| [Worker](/deno/Worker/Worker.env.PoC.ts)                                             | `env`                                | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.ffi.PoC.ts)                                             | `ffi`                                | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.hrtime.PoC.ts)                                          | `hrtime`                             | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.net.PoC.ts)                                             | `net`                                | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.read.PoC.ts)                                            | `read`                               | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.run.PoC.ts)                                             | `run`                                | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.sys.PoC.ts)                                             | `sys`                                | Privilege Escalation        | Limited by parent process permissions | TBA      |
+| [Worker](/deno/Worker/Worker.write.PoC.ts)                                           | `write`                              | Privilege Escalation        | Limited by parent process permissions | TBA      |
 | [Deno.makeTempDir](/deno/Deno/makeTempDir/makeTempDir.dir.PoC.ts)                    | `dir`                                | Path Traversal              | Limited by file system permissions    | TBA      |
 | [Deno.makeTempDir](/deno/Deno/makeTempDir/makeTempDir.prefix.PoC.ts)                 | `prefix`                             | Path Traversal              | Limited by file system permissions`*` | TBA      |
 | [Deno.makeTempDirSync](/deno/Deno/makeTempDir/makeTempDirSync.dir.PoC.ts)            | `dir`                                | Path Traversal              | Limited by file system permissions    | TBA      |
@@ -147,11 +155,13 @@ We also recommend checking out these papers and blog posts:
 | [json.JsonStringifyStream](/deno/std/json/JsonStringifyStream.prefix.PoC.ts)         | `prefix`                             | Unauthorized Modifications  |                                       | TBA      |
 | [json.JsonStringifyStream](/deno/std/json/JsonStringifyStream.suffix.PoC.ts)         | `suffix`                             | Unauthorized Modifications  |                                       | TBA      |
 | [log.FileHandler](/deno/std/log/FileHandler.formatter.PoC.ts)                        | `formatter`                          | Log Pollution               |                                       | TBA      |
+| [dotenv.load](/deno/std/dotenv/load.<any>.PoC.ts)                                    | _any_                                | Env injection               |                                       | TBA      |
 | [dotenv.load](/deno/std/dotenv/load.defaultsPath.PoC.ts)                             | `defaultsPath`                       | Env injection               |                                       | TBA      |
 | [dotenv.load](/deno/std/dotenv/load.envPath.PoC.ts)                                  | `envPath`                            | Env injection               |                                       | TBA      |
 | [dotenv.load](/deno/std/dotenv/load.export.PoC.ts)                                   | `export`                             | Env injection               |                                       | TBA      |
-| [dotenv.loadSync](/deno/std/dotenv/loadSync.defaultsPath.PoC.ts)                     | `envPath`                            | Env injection               |                                       | TBA      |
-| [dotenv.loadSync](/deno/std/dotenv/loadSync.envPath.PoC.ts)                          | `defaultsPath`                       | Env injection               |                                       | TBA      |
+| [dotenv.loadSync](/deno/std/dotenv/loadSync.<any>.PoC.ts)                            | _any_                                | Env injection               |                                       | TBA      |
+| [dotenv.loadSync](/deno/std/dotenv/loadSync.defaultsPath.PoC.ts)                     | `defaultsPath`                       | Env injection               |                                       | TBA      |
+| [dotenv.loadSync](/deno/std/dotenv/loadSync.envPath.PoC.ts)                          | `envPath`                            | Env injection               |                                       | TBA      |
 | [dotenv.loadSync](/deno/std/dotenv/loadSync.export.PoC.ts)                           | `export`                             | Env injection               |                                       | TBA      |
 | [tar.Tar.append](/deno/std/tar/Tar.uid.PoC.ts)                                       | `uid`                                | Privilege Escalation        |                                       | TBA      |
 | [tar.Tar.append](/deno/std/tar/Tar.gid.PoC.ts)                                       | `gid`                                | Privilege Escalation        |                                       | TBA      |

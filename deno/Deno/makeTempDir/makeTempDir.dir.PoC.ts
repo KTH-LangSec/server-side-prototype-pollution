@@ -5,4 +5,4 @@ function pollute(key: string, value: any) {
 pollute("dir", ".");
 
 const path = await Deno.makeTempDir();
-console.log(unpolluted);
+console.log(path);
