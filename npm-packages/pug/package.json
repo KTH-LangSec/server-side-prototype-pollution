@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pug": "^3.0.2",
+    "pug-parser": "^6.0.0"
+  }
+}
