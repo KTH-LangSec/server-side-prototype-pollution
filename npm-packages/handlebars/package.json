@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pug": "^3.0.3"
+    "handlebars": "^4.5.2"
   }
 }
